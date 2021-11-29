@@ -1,0 +1,161 @@
+*
+{
+    box-sizing: border-box;
+    /* margin: 0; */
+    /* padding: 0;  */
+}
+body{
+    background-image: linear-gradient(to right , rgb(245, 40, 50) ,white);
+
+}
+.container
+{
+    margin: 15px;
+    width: 950px;
+}
+.main
+{
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    /* text-align: center; */
+    height: 80px;
+     background-color: rgba(0, 0, 0, 0.2); 
+     box-shadow: 0 20px 10px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    list-style-type: none;
+
+}
+.main ul 
+{
+    list-style-type: none;
+}
+.main a 
+{
+    text-decoration: none;
+    font-size: 23px;
+    color: white;
+    letter-spacing: 2px;
+    display: block;
+    padding: 13px 30px 13px 25px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    background: transparent;
+    
+    text-align: center;
+}
+.main>li {
+    /* float: left; */
+    width: 20%;
+    perspective: 1000px;
+    height: 100%;
+
+}
+.main>li:hover>a{
+
+    background-color: rgba(50, 50, 200, 0.3);
+    /* opacity: 0.5; */
+    color: rgba(0, 223, 223, 1);
+}
+.main li ul{
+    padding: 0;
+    width: 185px;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+.main li ul li a:hover
+{
+    background-color: rgba(50, 50, 200, 0.3);
+
+
+}
+.main li:hover ul {
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px 0 silver;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    opacity: 1;
+    visibility: visible;
+    animation: swingdown 1s ease;
+    /* -moz-animation-iteration-count: ; */
+}
+
+
+
+@keyframes swingdown {
+    0% {
+        opacity: 0.99;
+        transform: rotateX(45deg) rotateY(-90deg) rotateZ(-90deg);
+    }
+    30% {
+        transform: rotateX(0deg), rotateY(0deg);
+        animation-timing-function: ease-in-out;
+    }
+    65% {
+        transform: rotateX(0deg), rotateY(0deg);
+        animation-timing-function: ease-in-out;
+    }
+    80% {
+        transform: rotateX(0deg), rotateY(0deg);
+    }
+}
+@media screen and (max-width:800px) {
+    .container{
+        width: 150px;
+        display: flex;
+    }
+    .main{
+        flex-direction: column;
+        height:340px;
+        
+
+    }
+    .main>li
+    {
+        display: flex;
+        flex-direction:row;
+        width: 100%;
+        height: 60px;
+    }
+  
+    .main li a
+    {
+        font-size: 1em;
+        padding: 10px 30px;
+        letter-spacing: 0;
+        /* border-radius:15px; */
+        text-align: center;
+        width: 100%;
+
+
+    }
+    .main li ul
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .main li ul li
+    {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .main li:hover ul {
+        /* padding: 0 15px 0 0; */
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 30px 0 silver;
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        opacity: 1;
+        display: block;
+        animation: swingdown 1s ease;
+    }
+   
+    
+}
+
